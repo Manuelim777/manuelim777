@@ -1,1 +1,29 @@
-<P> hola mundo <p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor Decimal a Binario</title>
+</head>
+<body>
+    <h1>Conversor Decimal a Binario</h1>
+    <p>Ingresa un número decimal:</p>
+    <input type="number" id="decimalInput" placeholder="Ingrese un número decimal">
+    <button onclick="convertirDecimalABinario()">Convertir</button>
+    <p>Resultado en binario: <span id="resultadoBinario"></span></p>
+
+    <script>
+        function convertirDecimalABinario() {
+            var decimalInput = document.getElementById("decimalInput").value;
+            var resultadoBinario = document.getElementById("resultadoBinario");
+
+            // Verificar si se ingresó un número válido
+            if (!isNaN(decimalInput)) {
+                // Convertir el número decimal a binario
+                var binario = (decimalInput >>> 0).toString(2);
+                resultadoBinario.textContent = binario;
+            } else {
+                resultadoBinario.textContent = "Ingrese un número válido.";
+            }
+        }
+    </script>
+</body>
+</html>
